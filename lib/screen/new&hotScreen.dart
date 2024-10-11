@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widget/comingSoon_movie_card.dart';
 
 class HotScreen extends StatelessWidget {
   const HotScreen({super.key});
@@ -9,7 +10,10 @@ class HotScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('New & Hot'),
+          title: const Text(
+            'New & Hot',
+            style: TextStyle(fontWeight: FontWeight.w700),
+          ),
           actions: [
             IconButton(
               onPressed: () {},
@@ -27,23 +31,63 @@ class HotScreen extends StatelessWidget {
             const SizedBox(width: 16),
           ],
           bottom: TabBar(
-         dividerColor: Colors.black,
-          labelColor: Colors.black,
-          indicatorColor: Colors.white,
-          unselectedLabelColor: Colors.white,
-          indicator: BoxDecoration(
-              borderRadius: BorderRadius.circular(16), color: Colors.white),
-
-          tabs: [
-            Tab(
-              text: ' 🍿 Coming Soon  ',
+            labelStyle: const TextStyle(fontWeight: FontWeight.w700),
+            labelColor: Colors.black,
+            indicatorColor: Colors.black,
+            unselectedLabelColor: Colors.white,
+            indicator: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: Colors.white,
             ),
-            Tab(
-              text: " 🔥 Everyone's watching   ",
-            )
+            tabs: const [
+              Tab(text: ' 🍿 Coming Soon  '),
+              Tab(text: " 🔥 Everyone's watching   "),
+            ],
+          ),
+        ),
+        body: const TabBarView(
+          children: [
+            // First Tab (Coming Soon)
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  ComingSoonMovieCard(
+                    imgUrl:
+                        'https://miro.medium.com/v2/resize:fit:1024/1*P_YU8dGinbCy6GHlgq5OQA.jpeg',
+                    logoUrl:
+                        'https://s3.amazonaws.com/www-inside-design/uploads/2017/10/strangerthings_feature-983x740.jpg',
+                    day: '28',
+                    month: 'June',
+                    overView:
+                        'When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.',
+                  ),
+                  ComingSoonMovieCard(
+                    imgUrl:
+                        'https://www.pinkvilla.com/images/2022-09/rrr-review.jpg',
+                    logoUrl:
+                        'https://www.careerguide.com/career/wp-content/uploads/2023/10/RRR_full_form-1024x576.jpg',
+                    day: '27',
+                    month: 'june',
+                    overView:
+                        'When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.',
+                  ),
+                ],
+              ),
+            ),
+
+            // Second Tab (Everyone's Watching)
+            ComingSoonMovieCard(
+              imgUrl: 'https://www.pinkvilla.com/images/2022-09/rrr-review.jpg',
+              logoUrl:
+                  'https://www.careerguide.com/career/wp-content/uploads/2023/10/RRR_full_form-1024x576.jpg',
+              day: '27',
+              month: 'june',
+              overView:
+                  'When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.',
+            ),
           ],
         ),
       ),
-    ),);
+    );
   }
 }

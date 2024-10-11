@@ -14,6 +14,7 @@ class Assets {
   static const String libMain = 'lib/main.dart';
   static const String modelMovieDetailedModel = 'lib/model/MovieDetailedModel.dart';
   static const String modelMovieModel = 'lib/model/movieModel.dart';
+  static const String modelMovieRecomendationModel = 'lib/model/movieRecomendationModel.dart';
   static const String modelPopularSeriesModel = 'lib/model/popular_series_model.dart';
   static const String modelSearchMovieModel = 'lib/model/search_Movie_Model.dart';
   static const String modelTopRatedSeriesModel = 'lib/model/Top_Rated_Series_Model.dart';
@@ -26,5 +27,6 @@ class Assets {
   static const String widgetBottomNavBar = 'lib/widget/BottomNavBar.dart';
   static const String widgetCustomCarouselSlider = 'lib/widget/customCarousel_slider.dart';
   static const String widgetMovieListWidget = 'lib/widget/MovieListWidget.dart';
+  static const String widgetUpcomingMovieCard = 'lib/widget/comingSoon_movie_card.dart';
 
 }
